@@ -1,0 +1,13 @@
+/* Reveal custom styles */
+.reveal {
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3 {
+  font-weight: 700;
+}
+.reveal section li {
+  margin: 0.3em 0;
+}
+.reveal code, .reveal pre {
+  font-size: 0.9em;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "slides-prompt-techniques",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown-first slides: Prompt techniques for hospital app teams in Japan (Dev/Sales/OA)",
+  "scripts": {
+    "dev": "reveal-md src/slides.md --watch --css reveal/reveal-custom.css --config reveal/reveal.config.json",
+    "preview": "reveal-md src/slides.md --css reveal/reveal-custom.css --config reveal/reveal.config.json",
+    "build:pptx": "marp src/slides.md -o dist/slides.marp.pptx --allow-local-files --theme-set themes/marp.css",
+    "build:pdf": "marp src/slides.md -o dist/slides.marp.pdf --allow-local-files --theme-set themes/marp.css",
+    "build:pandoc": "pandoc src/slides.md -o dist/slides.pandoc.pptx -s --reference-doc=themes/reference.pptx",
+    "build:all": "npm run build:pptx && npm run build:pdf && npm run build:pandoc"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0",
+    "reveal-md": "^6.2.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

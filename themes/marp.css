@@ -1,0 +1,43 @@
+:root {
+  --color-before: #0EA5E9; /* cyan */
+  --color-after:  #22C55E; /* green */
+  --color-accent: #2563EB; /* blue */
+}
+
+section {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  font-size: 28px; /* ~28–34pt for projector readability */
+  line-height: 1.35;
+}
+
+h1, h2, h3 {
+  color: #0f172a; /* slate-900 */
+  font-weight: 700;
+}
+
+p, li {
+  color: #111827; /* gray-900 */
+}
+
+.before { color: var(--color-before); font-weight: 800; }
+.after  { color: var(--color-after);  font-weight: 800; }
+.callout { background: #F1F5F9; padding: 8px 12px; border-left: 6px solid var(--color-accent); border-radius: 4px; }
+
+pre, code {
+  background: #0b1020 !important;
+  color: #e2e8f0 !important;
+  border-radius: 6px;
+}
+pre code {
+  padding: 0.6em;
+  display: block;
+}
+
+/* Simple two-column helper using table layout (portable) */
+.two-col table { width: 100%; table-layout: fixed; }
+.two-col th, .two-col td { vertical-align: top; width: 50%; }
+
+/* High-contrast badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.8em; color: #fff; }
+.badge.before { background: var(--color-before); }
+.badge.after  { background: var(--color-after); }

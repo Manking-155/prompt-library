@@ -1,0 +1,9 @@
+{
+  "revealOptions": {
+    "hash": true,
+    "progress": true,
+    "controls": true,
+    "slideNumber": true,
+    "transition": "fade"
+  }
+}
