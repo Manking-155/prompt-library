@@ -142,6 +142,19 @@ Nhấn mạnh phân quyền, không PII, tiêu chí traceable, dễ test (valida
 
 - Structured có làm chậm? → Ban đầu có, nhưng giảm vòng QA → tổng thể nhanh hơn
 - Dữ liệu thật? → Không; dùng synthetic + ẩn danh, kiểm soát truy cập
+- Guardrails & Rescheduling? → Xem partials: `src/partials/guardrails.md`, `src/partials/before_after_reschedule.md`
 - Tooling? → Marp/Pandoc/Reveal; xuất PPTX/PDF/HTML dễ chia sẻ
+
+<!-- Speaker notes: 30s -->
+
+---
+
+<!-- Slide 11: Backup — LLM Guardrails -->
+# LLM Guardrails (Backup)
+
+- Data minimization, access control, no PII in outputs
+- Ask once for missing info; refuse out-of-scope/jailbreak
+- Constrain outputs to JSON/CSV schemas
+- Xem: `src/partials/guardrails.md`
 
 <!-- Speaker notes: 30s -->
