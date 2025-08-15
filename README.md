@@ -48,7 +48,7 @@ Outputs are written to `dist/`.
 ## Project structure
 - `src/slides.md`: main deck (7–10 slides, speaker notes)
 - `src/partials/…`: reusable content blocks (before-after, checklist)
-- `themes/reference.pptx`: minimal PPTX template with logo area (used by Pandoc)
+- `themes/reference.pptx`: minimal PPTX template with logo area (used by Pandoc). Note: placeholder — replace with your branded template before running `npm run build:pandoc`.
 - `themes/marp.css`: lightweight Marp CSS theme (font, colors, high-contrast)
 - `reveal/reveal-custom.css` & `reveal/reveal.config.json`: reveal-md config for HTML preview
 - `dist/`: output folder
