@@ -71,3 +71,10 @@ Outputs are written to `dist/`.
 ## Troubleshooting
 - If `reveal-md` or `marp` are missing, run `npm i` to install dev dependencies.
 - Ensure Pandoc is installed for `build:pandoc`.
+
+## Quick start
+```
+npm i
+npm run dev
+npm run build:all
+```
