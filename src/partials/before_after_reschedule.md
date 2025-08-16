@@ -2,17 +2,17 @@
 
 > Lưu ý: Ví dụ dùng dữ liệu synthetic, không PII. Timezone: JST.
 
-## Before (Unstructured)
-
+## Prompt (Before — Unstructured)
 "Đổi lịch khám của bệnh nhân A sang tuần sau."
 
-- Không rõ lịch cũ (old_window), lịch mới mong muốn (new_window)
-- Không rõ khoa/bác sĩ, lý do đổi lịch, ưu tiên thời gian
-- Không có ràng buộc tuân thủ/phan quyền hoặc cách xác nhận với bệnh nhân
-- Không có định dạng output/tiêu chí kiểm thử
+### Output (Before) — Rủi ro
+- Không nêu old_window/new_window rõ → khó thực thi
+- Thiếu khoa/bác sĩ/ưu tiên → đề xuất sai hoặc không khớp lịch
+- Không có schema → không test được
 
-## After (Structured — 5 phần)
+---
 
+## Prompt (After — Structured, 5 phần)
 1) Role & Objective
 - Bạn là trợ lý lịch khám cho app bệnh viện tại Nhật. Mục tiêu: đề xuất lịch thay thế hợp lệ trong 14 ngày tới, tuân thủ lịch bác sĩ và quy định.
 
@@ -46,9 +46,30 @@
 - B3: Xuất JSON: patient, dept, old_window, new_window, doctor, reason, status, notes.
 - B4: Nếu không có slot phù hợp, đề xuất phương án thay thế (bác sĩ khác/cửa sổ khác) và nêu lý do.
 
+### Output (After) — Sample
+```json
+{
+  "patient": "Tanaka",
+  "dept": "Internal",
+  "old_window": "2025-08-18 09:00–10:00 JST",
+  "new_window": "2025-08-20 09:30–10:00 JST",
+  "doctor": "Sato",
+  "reason": "Doctor conflict",
+  "status": "tentative",
+  "notes": "Confirm with patient within 24h"
+}
+```
+
 ---
 
-### Đầu ra mong muốn (Acceptance)
-- JSON hợp lệ, có đủ khóa: patient, dept, old_window, new_window, doctor, reason, status, notes.
-- Traceability: new_window khớp lịch bác sĩ synthetic, trong 14 ngày kể từ old_window.
-- Testability: validate schema + kiểm tra khung giờ nằm trong 09:00–11:30 hoặc 14:00–16:30 (JST) nếu có.
+## Callouts khác biệt
+- Bổ sung old_window/new_window rõ ràng → traceable
+- Giữ cùng bác sĩ nếu có thể, nêu lý do khi thay đổi
+- Khung giờ JST chuẩn → giảm sai lệch vận hành
+- Output JSON schema rõ ràng → test được
+
+## Acceptance / Test cases
+- JSON hợp lệ với khóa: patient, dept, old_window, new_window, doctor, reason, status, notes
+- new_window trong vòng 14 ngày kể từ old_window
+- new_window nằm trong khung giờ 09:00–11:30 hoặc 14:00–16:30 (JST)
+- Nếu giữ bác sĩ không được → có đề xuất thay thế + lý do
