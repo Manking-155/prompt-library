@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^3.4.0",
-    "reveal-md": "^6.2.3"
+    "reveal-md": "^6.0.0"
   },
   "engines": {
     "node": ">=18"
