@@ -1,117 +1,111 @@
-Thực ra, việc dùng prompt thì chúng ta cũng làm khá lâu rồi.
-Nhiều anh chị em đã quen với cách viết chuẩn, và có thể nghĩ: ‘Tại sao phải nghe lại mấy kỹ thuật này?’
+Mở đầu
+Thực ra, việc viết prompt chúng ta đã quen rồi. Nhiều anh chị có thể nghĩ: “Sao phải học lại mấy kỹ thuật này?”.
+Mục tiêu hôm nay không phải dạy cái gì mới, mà là nhắc lại nguyên tắc cơ bản, để cả team cùng có chung một “ngôn ngữ” khi giao việc cho AI.
 
-Mục tiêu hôm nay không phải là dạy cái mới hoàn toàn, mà là gợi nhớ lại những nguyên tắc cơ bản, để cả team cùng có chung một ‘ngôn ngữ’ khi giao việc cho AI.
+Điều quan trọng: chỉ cần thêm một chút kỹ thuật, AI sẽ làm việc nhanh và chất lượng hơn. Nói cách khác, AI không thay thế chúng ta, mà là trợ lý tăng tốc.
 
-Quan trọng hơn, chúng ta sẽ thấy: chỉ cần thêm một chút kỹ thuật, AI có thể cải thiện tốc độ và chất lượng công việc nhanh chóng.
-Nói cách khác: AI không thay thế chúng ta, mà làm trợ lý tăng tốc cho chúng ta.
+👉 Bắt đầu với câu hỏi: Tại sao prompt rõ ràng lại quan trọng? (chuyển slide)
 
-👉 Giờ mình sẽ bắt đầu bằng câu hỏi: tại sao prompt rõ ràng lại quan trọng? (chuyển slide)”
 Slide 1 — Tại sao cần Prompt rõ ràng?
+“Có ai từng nhắn team kiểu: ‘Làm giúp em cái này nha’… rồi nhận về đúng cái khác mình muốn chưa? 😅
+AI cũng vậy: prompt mơ hồ → câu trả lời mơ hồ, prompt rõ ràng → kết quả chuẩn.
 
-“Anh chị em có bao giờ mở ticket IT kiểu: ‘Máy tính em bị lỗi’… rồi ping qua ping lại cả buổi mới ra là… lỗi Wi-Fi? 😅
-Với AI cũng vậy. Prompt mơ hồ thì câu trả lời cũng mơ hồ. Prompt rõ ràng thì tiết kiệm cả chục email follow-up.
+Thông điệp: Cách giao việc cho AI quyết định chất lượng kết quả.
 
-Thông điệp chính: Cách mình giao việc cho AI quyết định chất lượng kết quả.
+Hôm nay, mình coi AI như Google Maps: muốn đi đúng chỗ thì phải đặt điểm đến, chọn đường, và xem toàn cảnh. Cùng đi qua 5 nguyên tắc nhé!”
 
-👉 Vậy, khi đã là chuyên gia, ta sẽ giao việc cho AI thế nào để nó hỗ trợ tốt nhất? (chuyển slide)”
 
 Slide 2 — Role Prompting
 
-“Kỹ thuật đầu tiên: Role Prompting.
-AI không phải ‘thầy bói đoán ý’, nó cần biết mình đang đóng vai gì.
+“Role Prompting = giao một vai trò rõ ràng cho AI.
 
-Ví dụ: ‘Bạn là admin IT, hãy viết thông báo bảo trì dễ hiểu cho nhân viên.’
-Khi AI biết mình là admin, nó sẽ nói đúng chất admin, không lan man.
+Giống mở bản đồ: đặt đúng điểm đến.
 
-Trong công ty cũng vậy thôi: việc IT thì giao IT, việc HR thì để HR. Chứ đừng nhờ HR fix server nha 😆.
+Lợi ích: câu trả lời có chiều sâu, đúng bối cảnh, AI tập trung, không lan man; bạn giảm vòng hỏi–đáp.
+Ví dụ lời nhắc (trung tính): ‘Bạn là người biên tập, hãy viết phần mở đầu 120–150 từ, giọng thân thiện, dùng ẩn dụ bản đồ.’
 
-👉 Sau khi giao vai trò, ta cho AI một ví dụ để định hình chuẩn mực. (chuyển slide)”
+👉 Sau khi biết ‘điểm đến’, ta cho AI thấy mẫu tuyến đường để bám theo. (chuyển slide)
 
 Slide 3 — Few-shot Prompting
 
-“Với tư cách chuyên gia, ta luôn có ví dụ chuẩn trong tay.
-Như khi training nhân viên mới: đưa mẫu báo cáo tháng trước → họ học nhanh hơn nhiều.
+“Few-shot = cho 1–2 ví dụ ngắn để AI bắt chước.
 
-AI cũng vậy: cho 1–2 ví dụ, nó sẽ bám theo format, không ‘bay màu’ chuẩn công ty.
-Ví dụ: ‘Đây là mail thông báo downtime lần trước, viết phiên bản mới theo mẫu này.’
+Trong ngôn ngữ bản đồ: chọn tuyến quen/đường mẫu để Maps gợi ý đúng gu.
 
-Điểm mạnh: Few-shot giúp AI đồng bộ và giữ ‘chất riêng’ của công ty, y như có một style guide ngầm.
+Lợi ích: đầu ra đồng nhất, sát yêu cầu, giảm lệch format, tiết kiệm thời gian review.
+Gợi ý: đưa 1 mẫu hay nhất + 1 mẫu tối giản → AI hiểu ‘biên độ’ mong muốn.
 
-👉 Nhưng ví dụ thôi chưa đủ. Đôi khi phải nhắc AI lùi lại, nhìn toàn cảnh trước khi viết. (chuyển slide)”
+👉 Trước khi đi sâu, hãy zoom out xem toàn cảnh để không lạc đường. 
 
 Slide 4 — Step-back Prompting
 
-“Step-back Prompting = lùi lại một bước để thấy toàn cảnh.
+“Step-back = lùi một bước để nghĩ về nguyên tắc cốt lõi trước khi viết.
 
-Ví dụ: trước khi viết thông báo downtime, mình – với vai trò chuyên gia – sẽ dừng lại và hỏi: Nguyên tắc cốt lõi là gì?
-→ Phải có ngày giờ rõ ràng, hệ thống nào bị ảnh hưởng, và contact support.
+Trên bản đồ: zoom out nhìn toàn cảnh, thấy cao tốc, kẹt xe, đường cấm.
 
-Step-back giống như mở Google Maps trước khi đi: biết bản đồ tổng thể rồi mới tính rẽ trái rẽ phải.
-Nhờ vậy, AI không bỏ sót ý quan trọng, và kết quả luôn đầy đủ.
+Lợi ích: output sâu sắc, không hời hợt, tránh thiếu ý/nhầm trọng tâm, định rõ phạm vi & tiêu chí thành công.
+Câu dẫn cho AI: ‘Trước khi viết, liệt kê 3–5 nguyên tắc cốt lõi cần đáp ứng cho đầu ra.’
 
-👉 Sau khi có cái nhìn toàn cảnh, ta để AI đi theo từng bước chi tiết. (chuyển slide)”
+👉 Rồi ta cho AI đi từng chặng rõ ràng theo kế hoạch sẵn có. 
 
 Slide 5 — Chain of Thought (CoT)
 
-“CoT nghĩa là buộc AI làm theo kế hoạch từng bước mà mình đã định sẵn.
-Ví dụ, khi viết thông báo downtime, mình – chuyên gia – đã biết rõ thứ tự:
+“CoT = buộc AI suy nghĩ theo từng bước logic (theo checklist của bạn – chuyên gia).
 
-Xác định hệ thống ảnh hưởng
+Trên bản đồ: chỉ đường từng chặng — 300m rẽ trái → 2km đi thẳng…
 
-Ghi ngày giờ cụ thể
+Lợi ích: có luồng suy luận rõ, dễ kiểm tra/soát lỗi, dễ ‘debug’ khi kết quả lệch.
+Mẹo: liệt kê các bước dạng số (1→2→3) và yêu cầu AI hiển thị suy luận ngắn gọn cho mỗi bước.
 
-Liệt kê ảnh hưởng tới user
-
-Viết thông báo hoàn chỉnh
-
-AI chỉ cần đi theo checklist này. Giống như điền form ticket support: điền từng trường, đảm bảo không thiếu.
-
-Điểm cộng: mình kiểm soát được luồng suy luận, còn AI thì ‘nghĩ thành tiếng’ đúng theo checklist, rất dễ kiểm tra.
-
-👉 Và đôi khi, ta không cần 1 bản duy nhất, mà muốn nhiều góc nhìn để so sánh. (chuyển slide)”
+👉 Đôi khi ta muốn nhiều lộ trình để so sánh, tránh lối mòn.
 
 Slide 6 — Tree of Thoughts (ToT)
 
-“ToT chính là lúc AI đóng vai ‘người trong team brainstorm’ cho mình.
+“ToT = yêu cầu nhiều phương án rồi chọn cái tốt nhất.
 
-Ví dụ: AI viết 3 bản thông báo downtime: một bản siêu ngắn cho chat nội bộ, một bản chi tiết cho email, và một bản thân thiện cho khách hàng.
-Mình – chuyên gia – chỉ cần chọn cái hợp lý nhất.
+Trên bản đồ: nhiều tuyến song song — nhanh nhất/ít kẹt/đường đẹp.
 
-Điều quan trọng hơn: ToT giúp giảm bias. Khi quen nghề, ta hay đi theo ‘lối mòn’. AI lại đưa thêm góc nhìn khác, cách diễn đạt mới → đôi khi còn sáng tạo hơn cả mình.
+Lợi ích: tăng sáng tạo, vẫn sát mục tiêu; đặc biệt giúp giảm bias của chính mình khi đã quá quen một lối nghĩ chuyên môn.
+Mẹo: yêu cầu 3 phương án khác nhau + tiêu chí so sánh (độ rõ, ngắn gọn, thân thiện…) + đề xuất chọn.
 
-👉 Giờ cùng xem một ví dụ Before – After để thấy khác biệt rõ ràng. (chuyển slide)”
+👉 Vậy có cách nào tận dụng AI để giúp ta hoàn thiện chính prompt giao tiếp với AI không
 
-Slide 7 — Ví dụ Before/After
+Slide 7 - Prompt tối ưu cùng Demo
+"Bạn là một chuyên gia về prompt engineering.
+Nhiệm vụ của bạn là giúp tôi tối ưu hóa các prompt mà tôi gửi cho bạn, dựa trên các kỹ thuật prompt tốt nhất.
 
-“Ngày xưa mình từng thấy thông báo: ‘ERP sẽ maintain tuần sau’. Đọc xong ai cũng hỏi: tuần nào? mấy giờ? có ảnh hưởng không? 🤦‍♂️.
+Hãy làm theo các bước sau để phân tích và cải thiện prompt mà tôi cung cấp:
 
-Sau khi áp dụng kỹ thuật, ta viết: ‘ERP bảo trì 8/9, từ 20:00–22:00 JST. Trong thời gian này user không truy cập được. Liên hệ support@…’.
-Rõ ràng, ai đọc cũng hiểu ngay.
+1. Phân tích prompt
+   - Xác định mục tiêu và nhiệm vụ của prompt.
+   - Xác định xem prompt có rõ ràng, cụ thể và dễ hiểu không.
 
-👉 Vậy làm sao để không chỉ viết tốt một lần, mà còn liên tục tối ưu? (chuyển slide)”
+2. Đánh giá prompt
+   - Kiểm tra xem prompt có sử dụng các kỹ thuật prompt tốt nhất như Step-back Prompting, Tree-of-Thoughts, Few-shot Prompting, Chain of Thought, hoặc Role Prompting không.
+   - Xem xét liệu prompt có cung cấp đủ ngữ cảnh hoặc ví dụ để hướng dẫn AI không.
 
-Slide 8 — Tối ưu Prompt với AI
+3. Đề xuất cải tiến
+   - Đề xuất các thay đổi cụ thể để làm cho prompt hiệu quả hơn (ví dụ: thêm ví dụ, làm rõ hướng dẫn, hoặc sử dụng một kỹ thuật prompt khác).
+   - Giải thích lý do tại sao các cải tiến này sẽ giúp cải thiện chất lượng của phản hồi từ AI.
 
-“AI không chỉ làm việc, mà còn có thể review prompt như một mentor.
+4. Cung cấp phiên bản prompt đã tối ưu hóa
+   - Viết lại prompt với các cải tiến đã đề xuất.
+   - Đảm bảo rằng phiên bản mới tuân theo các best practices và sẽ giúp AI tạo ra phản hồi chính xác và hữu ích hơn.
 
-Mình có thể nhờ AI: phân tích mục tiêu, kiểm tra đã đủ Role/Few-shot/CoT chưa, đề xuất thêm context, rồi viết lại bản tối ưu.
-Nói cách khác, AI chính là team lead không biết mệt mỏi, luôn sẵn sàng feedback.
+ Hãy áp dụng quy trình này cho prompt mà tôi sẽ gửi cho bạn tiếp theo."
 
-👉 Và cuối cùng, tổng kết lại thật ngắn gọn. (chuyển slide)”
+Slide 8 — Takeaway 
 
-Slide 9 — Takeaway chung
+“Nhớ 3 điều cốt lõi: Rõ ràng – Có ví dụ – Có bối cảnh.
 
-“Không cần nhớ hết tên kỹ thuật.
-Chỉ cần 3 điều: Rõ ràng – Có ví dụ – Có bối cảnh.
+Role: đặt đúng điểm đến
 
-Các kỹ thuật Role, Few-shot, Step-back, CoT, ToT chỉ là công cụ để đạt được điều đó.
-Điều quan trọng: mình – chuyên gia – giao việc cho AI rõ ràng thì AI sẽ là trợ lý hiệu quả.
+Few-shot: đưa tuyến mẫu
 
-Và mình xin để lại một câu hỏi:
-Nếu tuần sau hệ thống cần downtime, bạn sẽ viết prompt thế nào để AI soạn mail thật rõ ràng cho công ty?”
+Step-back: zoom out xem toàn cảnh
 
-⏱️ Thời lượng: 6–7 phút (mỗi kỹ thuật ~45 giây, Before/After ngắn hơn).
-👉 Sau đó bạn có thể demo thực tế và mở phần Q&A.
+CoT: đi từng chặng theo checklist
 
-Bạn có muốn mình viết thêm phiên bản “note trình bày” (đánh dấu chỗ pause, chỗ cài tiếng cười, chỗ dùng gesture) để bạn luyện tập nói cho tự nhiên hơn không?
+ToT: so nhiều tuyến để giảm bias
+
+Slide 9: QA

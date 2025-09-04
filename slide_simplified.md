@@ -29,20 +29,15 @@ theme: default
 # Role Prompting
 
 - Giao **một vai trò rõ ràng** cho AI.  
-- Kết quả đồng nhất, sát ngữ cảnh  
-
-- Ví dụ: *“Bạn là trợ lý IT, hãy viết thông báo bảo trì dễ hiểu cho khách hàng.”*  
-👉 Giúp AI tập trung, không lan man.
+- Kết quả nhận được càng có chiều sâu và phù hợp với bối cảnh.
+- Giúp AI tập trung, không lan man.
 
 ---
 
 # Few-shot Prompting
 
 - Cho AI **1–2 ví dụ ngắn gọn** để AI bắt chước. 
-- Kết quả AI trả về sẽ đồng nhất, sát ngữ cảnh  
-
-- Ví dụ: *“Đây là mẫu thông báo bảo trì lần trước…”* → AI sinh bản mới dựa theo.  
-👉 Giúp kết quả đồng nhất, chuẩn hơn.
+- Kết quả AI trả về sẽ đồng nhất, sát yêu cầu đầu ra.  
 
 ---
 
@@ -50,31 +45,21 @@ theme: default
 
 - Lùi một bước để nghĩ về **nguyên tắc cốt lõi** trước khi viết.  
 - Tạo output sâu sắc, không hời hợt  
-
-- Ví dụ: Khi viết thông báo bảo trì → cần ngày giờ, hệ thống ảnh hưởng, liên hệ hỗ trợ.  
-👉 Tránh thiếu ý, tránh mơ hồ.
+- Tránh thiếu ý, tránh mơ hồ.
 
 ---
 
 # Chain of Thought (CoT)
 
 - Buộc AI suy nghĩ theo từng bước logic.  
-- Ví dụ:
-  - B1: Xác định hệ thống ảnh hưởng  
-  - B2: Nêu thời gian  
-  - B3: Liệt kê rủi ro  
-  - B4: Soạn thông báo  
-👉 Output có luồng suy luận, dễ kiểm tra.
+- Output có luồng suy luận, dễ kiểm tra.
 
 ---
 
 # Tree of Thoughts (ToT)
 
 - Yêu cầu AI đưa **nhiều phương án** rồi chọn cái tốt nhất.  
-- Đảm bảo sáng tạo nhưng sát mục tiêu  
-
-- Ví dụ: AI tạo 3 bản thông báo: ngắn gọn, chi tiết, thân thiện → team chọn.  
-👉 Đảm bảo sáng tạo nhưng sát mục tiêu.
+- Đảm bảo sáng tạo nhưng sát mục tiêu.
 
 ---
 
