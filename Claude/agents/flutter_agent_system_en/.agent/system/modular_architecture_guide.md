@@ -1,58 +1,64 @@
-# Modular Architecture Guide
+# Feature-Based Architecture Guide
 
 ## Overview
 
-Modular Architecture breaks the application into independent, self-contained feature modules. Each module has its own:
-- Dependencies (`pubspec.yaml`)
-- Code structure
+Feature-Based Architecture organizes the application into independent, self-contained feature modules within a single Flutter app. Each feature module has its own:
+- Code structure (data, domain, presentation)
 - Business logic
 - UI components
+- Local state management
 
 This approach enables:
-- Parallel development
-- Reduced merge conflicts
+- Clear separation of concerns
+- Easy feature navigation
 - Independent testing
 - Better code organization
-- Easier feature toggling
+- Scalable feature development
 
 ## Feature Module Structure
 
 ### Basic Structure
 ```
-features/
-├── [feature_name]/
-│   ├── lib/
-│   │   ├── data/
-│   │   │   ├── datasources/
-│   │   │   ├── models/
-│   │   │   └── repositories/
-│   │   ├── domain/
-│   │   │   ├── entities/
-│   │   │   ├── repositories/
-│   │   │   └── usecases/
-│   │   ├── presentation/
-│   │   │   ├── pages/
-│   │   │   ├── widgets/
-│   │   │   ├── controllers/
-│   │   │   └── bindings/
-│   │   └── [feature_name].dart  # Public exports
-│   └── pubspec.yaml
-└── shared/                        # Shared between features
-    ├── lib/
-    │   ├── domain/
-    │   ├── data/
-    │   └── presentation/
-    └── pubspec.yaml
+lib/features/
+├── shared/                         # Shared between features
+│   ├── data/                       # Shared models and services
+│   ├── domain/                     # Shared entities and interfaces
+│   └── presentation/               # Shared widgets and themes
+├── authentication/                 # Feature module
+│   ├── data/
+│   │   ├── datasources/
+│   │   ├── models/
+│   │   └── repositories/
+│   ├── domain/
+│   │   ├── entities/
+│   │   ├── repositories/
+│   │   └── usecases/
+│   └── presentation/
+│       ├── pages/
+│       ├── widgets/
+│       ├── controllers/
+│       └── bindings/
+├── home/                           # Another feature module
+│   ├── data/
+│   ├── domain/
+│   └── presentation/
+└── profile/                        # More features as needed
+    ├── data/
+    ├── domain/
+    └── presentation/
 ```
 
 ## Creating a New Feature Module
 
 ### Step 1: Create Directory Structure
 ```bash
-mkdir -p features/[feature_name]/lib/{data,domain,presentation}
+mkdir -p lib/features/[feature_name]/{data,domain,presentation}
 ```
 
-### Step 2: Create pubspec.yaml
+### Step 2: Note on Dependencies
+All dependencies go in the root `pubspec.yaml` (single Flutter app). No separate feature-level pubspec.yaml needed.
+
+### Step 2b: Create Layer-Specific Directories
 ```yaml
 name: [feature_name]
 version: 0.1.0

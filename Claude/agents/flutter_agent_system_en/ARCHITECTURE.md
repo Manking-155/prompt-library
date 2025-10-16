@@ -5,36 +5,6 @@
 ```
 flutter_app/
 ├── android/
-├── features/
-│   ├── shared/                 # Shared module for common code
-│   │   ├── lib/
-│   │   │   ├── domain/         # Shared entities and interfaces
-│   │   │   ├── data/           # Shared models and services
-│   │   │   └── presentation/   # Shared widgets and themes
-│   │   ├── pubspec.yaml
-│   │   └── README.md
-│   ├── [feature_name]/         # Feature module (eg: flashcard_import)
-│   │   ├── lib/
-│   │   │   ├── data/           # Repositories and datasources
-│   │   │   │   ├── datasources/
-│   │   │   │   │   ├── local/
-│   │   │   │   │   └── remote/
-│   │   │   │   ├── models/
-│   │   │   │   └── repositories/
-│   │   │   ├── domain/         # Entities, usecases, repository interfaces
-│   │   │   │   ├── entities/
-│   │   │   │   ├── repositories/
-│   │   │   │   └── usecases/
-│   │   │   ├── presentation/   # UI, controllers, bindings
-│   │   │   │   ├── pages/
-│   │   │   │   ├── widgets/
-│   │   │   │   ├── controllers/
-│   │   │   │   └── bindings/
-│   │   │   └── [feature_name].dart  # Public API exports
-│   │   ├── pubspec.yaml        # Feature-specific dependencies
-│   │   └── README.md
-│   └── [other_features]/
-├── ios/
 ├── lib/
 │   ├── app/                    # App configuration and theme
 │   ├── core/                   # Infrastructure and services
@@ -44,11 +14,35 @@ flutter_app/
 │   │   ├── errors/             # Result wrapper and exceptions
 │   │   ├── extensions/         # Dart extensions
 │   │   └── constants/          # App constants
+│   ├── features/               # Feature modules
+│   │   ├── shared/             # Shared code between features
+│   │   │   ├── data/           # Shared models and services
+│   │   │   ├── domain/         # Shared entities and interfaces
+│   │   │   └── presentation/   # Shared widgets and themes
+│   │   ├── authentication/     # Feature example
+│   │   │   ├── data/           # Repositories and datasources
+│   │   │   │   ├── datasources/
+│   │   │   │   ├── models/
+│   │   │   │   └── repositories/
+│   │   │   ├── domain/         # Entities, usecases, interfaces
+│   │   │   │   ├── entities/
+│   │   │   │   ├── repositories/
+│   │   │   │   └── usecases/
+│   │   │   └── presentation/   # Pages, widgets, controllers, bindings
+│   │   ├── home/               # Another feature example
+│   │   │   ├── data/
+│   │   │   ├── domain/
+│   │   │   └── presentation/
+│   │   └── profile/            # More features as needed
+│   │       ├── data/
+│   │       ├── domain/
+│   │       └── presentation/
 │   ├── routes/                 # Route definitions and navigation
 │   │   ├── app_routes.dart
 │   │   ├── app_pages.dart
 │   │   └── middlewares/
 │   └── main.dart               # App entry point
+├── ios/
 ├── macos/
 ├── test/
 │   ├── unit/                   # Unit tests
@@ -63,14 +57,13 @@ flutter_app/
 
 ## Folder & File Explanation
 
-### `features/` - Feature Modules
-All features are organized into independent modules:
-- **`shared/`**: Shared code between features (entities, widgets, services)
-- **`[feature_name]/`**: Each feature is a separate Dart package with its own `pubspec.yaml`
-  - **`lib/data/`**: Repositories, datasources (local/remote), models
-  - **`lib/domain/`**: Entities, repository interfaces, usecases
-  - **`lib/presentation/`**: Pages, widgets, GetX controllers, bindings
-  - **`[feature_name].dart`**: Public API export file (exposed to other features)
+### `lib/features/` - Feature Modules
+All features are organized under the features folder using Clean Architecture:
+- **`shared/`**: Shared code between features (common entities, widgets, services)
+- **`authentication/`**, **`home/`**, **`profile/`**, etc.: Individual feature modules
+  - **`data/`**: Repositories, datasources (local/remote), models
+  - **`domain/`**: Entities, repository interfaces, usecases
+  - **`presentation/`**: Pages, widgets, GetX controllers, bindings
 
 ### `lib/core/` - Core Infrastructure
 Contains platform-level components not related to specific business logic:
@@ -99,13 +92,14 @@ Contains platform-level components not related to specific business logic:
 
 ## Architecture Description
 
-This project implements **Modular + Clean Architecture**:
+This project implements **Clean Architecture** with **Feature-Based Organization**:
 
-### 1. Modular Architecture
-- Each feature is an independent module with its own `pubspec.yaml`
-- Features have no dependencies on each other (no circular dependencies)
-- Shared code is in the `features/shared` module
-- Enables parallel development across teams
+### 1. Feature-Based Organization
+- Features are organized in `lib/features/` folder
+- Each feature contains `data/`, `domain/`, and `presentation/` layers
+- Shared code is in the `features/shared` folder
+- Single `pubspec.yaml` for the entire app
+- Easy to navigate and maintain
 
 ### 2. Clean Architecture (3 Layers)
 Each feature module follows 3 layers:

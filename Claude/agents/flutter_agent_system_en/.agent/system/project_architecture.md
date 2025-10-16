@@ -21,8 +21,8 @@
 
 ## Architecture Overview
 
-The project follows a **Modular Clean Architecture** pattern that combines:
-1. **Modular Architecture**: Feature-based modules with independent pubspec.yaml
+The project follows a **Clean Architecture** pattern with **Feature-Based Organization**:
+1. **Feature-Based Organization**: Features organized in `lib/features/` folder
 2. **Clean Architecture**: 3-layer separation (Presentation, Domain, Data)
 3. **Offline-First**: Local database as source of truth with background sync
 4. **Error Handling**: Result wrapper pattern for type-safe error handling
@@ -36,19 +36,27 @@ flutter_app/
 │   ├── core/                         # Core services & infrastructure
 │   │   ├── di/                       # GetIt + Injectable setup
 │   │   ├── services/                 # Global services (logging, event bus)
+│   │   ├── database/                 # Drift database configuration
 │   │   ├── errors/                   # Error definitions & Result wrapper
 │   │   ├── extensions/               # Dart extensions
 │   │   └── constants/                # App constants
 │   ├── features/                     # Feature modules
-│   │   ├── flashcard_import/
-│   │   │   ├── lib/
-│   │   │   │   ├── data/            # Data layer (repositories, datasources)
-│   │   │   │   ├── domain/          # Domain layer (entities, usecases)
-│   │   │   │   └── presentation/    # Presentation layer (UI, controllers)
-│   │   │   └── pubspec.yaml         # Feature-specific dependencies
-│   │   ├── flashcard_viewer/
-│   │   │   └── [similar structure]
-│   │   └── shared/                   # Shared code between features
+│   │   ├── shared/                   # Shared code between features
+│   │   │   ├── data/                 # Shared models and services
+│   │   │   ├── domain/               # Shared entities and interfaces
+│   │   │   └── presentation/         # Shared widgets and themes
+│   │   ├── authentication/           # Feature example
+│   │   │   ├── data/                 # Repositories, datasources
+│   │   │   ├── domain/               # Entities, usecases, interfaces
+│   │   │   └── presentation/         # Pages, widgets, controllers
+│   │   ├── home/                     # Another feature
+│   │   │   ├── data/
+│   │   │   ├── domain/
+│   │   │   └── presentation/
+│   │   └── profile/                  # More features as needed
+│   │       ├── data/
+│   │       ├── domain/
+│   │       └── presentation/
 │   ├── routes/                       # Route definitions
 │   └── main.dart                     # Application entry point
 ├── test/
@@ -69,10 +77,11 @@ flutter_app/
 - **`constants/`**: App-wide constants (API URLs, timeouts, etc.)
 
 ### `features/` - Feature Modules
-Each feature is a self-contained module with:
-- **`data/`**: Database, API, local storage implementation
-- **`domain/`**: Business logic, entities, repository interfaces
-- **`presentation/`**: UI screens, GetX controllers, widgets
+Each feature is organized with Clean Architecture layers:
+- **`shared/`**: Common code shared between features
+- **`[feature_name]/data/`**: Database, API, local storage implementation
+- **`[feature_name]/domain/`**: Business logic, entities, repository interfaces
+- **`[feature_name]/presentation/`**: UI screens, GetX controllers, widgets
 
 ### `routes/` - Navigation
 Centralized route definitions using Get Router:
@@ -83,10 +92,11 @@ Centralized route definitions using Get Router:
 
 ## Key Design Patterns
 
-### 1. Modular Architecture
-- Each feature has its own `pubspec.yaml`
-- Features are independent and can be developed in parallel
+### 1. Feature-Based Organization
+- Features are organized in `lib/features/` folder
+- Each feature contains `data/`, `domain/`, and `presentation/` layers
 - Shared code goes in `features/shared`
+- Single `pubspec.yaml` for entire app
 
 ### 2. Clean Architecture (3 Layers)
 ```
