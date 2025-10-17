@@ -1,0 +1,68 @@
+{
+  "name": "mobilekit-flutter-cli",
+  "version": "1.0.0",
+  "description": "MobileKit Flutter - AI-Powered Cross-Platform Development Toolkit",
+  "main": "cli/mkf.js",
+  "bin": {
+    "mkf": "./cli/mkf.js"
+  },
+  "scripts": {
+    "start": "node cli/mkf.js",
+    "test": "jest",
+    "build": "pkg cli/mkf.js --targets node16-win-x64,node16-macos-x64,node16-linux-x64 --out-path dist/",
+    "lint": "eslint cli/**/*.js",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "flutter",
+    "dart",
+    "mobile",
+    "cross-platform",
+    "android",
+    "ios",
+    "ai",
+    "development",
+    "toolkit",
+    "claude",
+    "agents"
+  ],
+  "author": "MobileKit Team <team@mobilekit.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "inquirer": "^9.2.0",
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.1.0",
+    "axios": "^1.5.0",
+    "yaml": "^2.3.0",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "husky": "^8.0.0",
+    "pkg": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mobilekit/flutter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mobilekit/flutter/issues"
+  },
+  "homepage": "https://mobilekit.dev/flutter",
+  "files": [
+    "cli/",
+    "agents/",
+    "commands/",
+    "templates/",
+    "docs/",
+    "README.md",
+    "CLAUDE.md",
+    "LICENSE"
+  ]
+}

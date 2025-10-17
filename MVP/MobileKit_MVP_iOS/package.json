@@ -1,0 +1,17 @@
+{
+  "name": "mobilekit-mvp-ios",
+  "version": "1.0.0-mvp",
+  "description": "MobileKit MVP Edition for iOS",
+  "main": "cli/mki-mvp.js",
+  "bin": {
+    "mki-mvp": "./cli/mki-mvp.js"
+  },
+  "keywords": [
+    "ios",
+    "mvp",
+    "firebase",
+    "swift",
+    "swiftui"
+  ],
+  "license": "MIT"
+}

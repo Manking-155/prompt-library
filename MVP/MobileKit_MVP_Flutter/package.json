@@ -1,0 +1,17 @@
+{
+  "name": "mobilekit-mvp-flutter",
+  "version": "1.0.0-mvp",
+  "description": "MobileKit MVP Edition for Flutter",
+  "main": "cli/mkf-mvp.js",
+  "bin": {
+    "mkf-mvp": "./cli/mkf-mvp.js"
+  },
+  "keywords": [
+    "flutter",
+    "mvp",
+    "firebase",
+    "dart",
+    "cross-platform"
+  ],
+  "license": "MIT"
+}
