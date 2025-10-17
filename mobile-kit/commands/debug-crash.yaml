@@ -1,0 +1,9 @@
+name: debug-crash
+description: Diagnose a crash or critical bug
+inputs:
+  logs: string
+steps:
+  - role: mobile-debugger
+    with: agents/mobile-debugger.md
+    prompt: |
+      Analyze logs and identify root cause and fix plan. Output: rca.md + patch suggestions.

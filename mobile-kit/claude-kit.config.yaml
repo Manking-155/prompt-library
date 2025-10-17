@@ -1,0 +1,26 @@
+agents:
+  mobile-planner: agents/mobile-planner.md
+  mobile-researcher: agents/mobile-researcher.md
+  ui-ux-designer: agents/ui-ux-designer.md
+  mobile-tester: agents/mobile-tester.md
+  code-reviewer: agents/code-reviewer.md
+  mobile-debugger: agents/mobile-debugger.md
+  git-manager: agents/git-manager.md
+  release-manager: agents/release-manager.md
+workflows:
+  new-feature: workflows/new-feature.yaml
+  new-feature-workflow: workflows/new-feature-workflow.yaml
+  bug-fix-release: workflows/bug-fix-release.yaml
+  ui-ux-iteration: workflows/ui-ux-iteration.yaml
+  app-store-release: workflows/app-store-release.yaml
+templates:
+  flutter: templates/flutter/MOBILE_CONTEXT.md
+  ios-swift: templates/ios-swift/MOBILE_CONTEXT.md
+  react-native: templates/react-native/MOBILE_CONTEXT.md
+commands:
+  generate-feature: commands/generate-feature.yaml
+  new-project: commands/new-project.yaml
+  review-code: commands/review-code.yaml
+  run-tests: commands/run-tests.yaml
+  build-release: commands/build-release.yaml
+  debug-crash: commands/debug-crash.yaml

@@ -1,0 +1,12 @@
+name: review-code
+description: Run a focused code review using AITMPL Code Reviewer
+inputs:
+  diff: string
+steps:
+  - role: code-reviewer
+    with: agents/code-reviewer.md
+    prompt: |
+      Review the following diff for security, performance, maintainability, and correctness.
+      Apply CLAUDE.md standards. Output: review.md with Approve/Changes Requested.
+      Diff:
+      ${diff}

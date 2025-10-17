@@ -1,0 +1,66 @@
+name: "UI/UX Iteration Workflow"
+description: "Iterative design and implementation of UI/UX improvements"
+version: "1.0"
+
+agents:
+  - name: "ui-ux-designer"
+    role: "Create and refine UI mockups"
+    input:
+      - design_requirements
+      - user_feedback
+      - brand_guidelines
+    output:
+      - ui_mockups
+      - design_specifications
+      - assets
+
+  - name: "mobile-planner"
+    role: "Plan technical implementation"
+    input:
+      - ui_mockups
+      - design_specifications
+    output:
+      - implementation_plan
+      - technical_requirements
+
+  - name: "mobile-tester"
+    role: "Test UI/UX changes"
+    input:
+      - implemented_ui
+      - design_specifications
+    output:
+      - usability_tests
+      - accessibility_tests
+      - device_compatibility_tests
+
+  - name: "code-reviewer"
+    role: "Review UI implementation"
+    input:
+      - implemented_ui
+      - test_results
+    output:
+      - code_review
+      - performance_recommendations
+
+  - name: "docs-manager"
+    role: "Update documentation"
+    input:
+      - final_ui_implementation
+      - design_changes
+    output:
+      - updated_documentation
+      - user_guides
+
+execution_order:
+  - ui-ux-designer
+  - mobile-planner
+  - mobile-tester
+  - code-reviewer
+  - docs-manager
+
+dependencies: {}
+context:
+  project_type: "mobile"
+  focus_area: "ui_ux"
+  iteration_type: "improvement"
+  user_testing_required: true

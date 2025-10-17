@@ -1,0 +1,10 @@
+name: build-release
+description: Produce a release checklist and artifacts plan
+inputs:
+  platform: [ios, android]
+steps:
+  - role: release-manager
+    with: agents/release-manager.md
+    prompt: |
+      Create release checklist for ${platform}: versioning, signing, build, store metadata, rollout & rollback.
+      Output: release-checklist.md.

@@ -1,0 +1,236 @@
+# New Feature Development Workflow
+
+name: "new-feature-development"
+description: "Complete workflow for developing a new mobile feature from planning to deployment"
+version: "1.0"
+
+# Workflow Configuration
+config:
+  timeout: 3600  # 1 hour timeout
+  retry_attempts: 3
+  parallel_limit: 3
+  context_sharing: true
+
+# Input Requirements
+inputs:
+  - name: "feature_description"
+    type: "string"
+    required: true
+    description: "Detailed description of the feature to be developed"
+
+  - name: "target_platforms"
+    type: "array"
+    required: true
+    options: ["ios", "android", "both"]
+    description: "Target platforms for the feature"
+
+  - name: "priority"
+    type: "string"
+    required: false
+    default: "medium"
+    options: ["low", "medium", "high", "critical"]
+    description: "Feature priority level"
+
+  - name: "deadline"
+    type: "date"
+    required: false
+    description: "Target completion date"
+
+# Workflow Steps
+steps:
+  # Phase 1: Planning & Research
+  - name: "planning"
+    agent: "mobile-planner"
+    type: "sequential"
+    inputs:
+      - feature_description
+      - target_platforms
+      - priority
+      - deadline
+    outputs:
+      - technical_requirements
+      - implementation_plan
+      - timeline_estimate
+
+  - name: "research"
+    agent: "mobile-researcher"
+    type: "parallel"
+    depends_on: ["planning"]
+    parallel_instances: 2
+    inputs:
+      - technical_requirements
+      - target_platforms
+    outputs:
+      - package_recommendations
+      - implementation_approaches
+      - best_practices
+
+  # Phase 2: Design & Architecture
+  - name: "ui_design"
+    agent: "ui-ux-designer"
+    type: "sequential"
+    depends_on: ["planning", "research"]
+    inputs:
+      - feature_description
+      - target_platforms
+      - technical_requirements
+    outputs:
+      - ui_mockups
+      - design_assets
+      - component_code
+
+  - name: "database_design"
+    agent: "database-architect"
+    type: "parallel"
+    depends_on: ["planning"]
+    inputs:
+      - technical_requirements
+      - implementation_plan
+    outputs:
+      - database_schema
+      - migration_scripts
+      - data_models
+
+  # Phase 3: Implementation Review
+  - name: "code_review_design"
+    agent: "code-reviewer"
+    type: "sequential"
+    depends_on: ["ui_design", "database_design"]
+    inputs:
+      - component_code
+      - database_schema
+      - technical_requirements
+    outputs:
+      - design_review_feedback
+      - security_recommendations
+      - performance_suggestions
+
+  # Phase 4: Testing Strategy
+  - name: "test_planning"
+    agent: "mobile-tester"
+    type: "sequential"
+    depends_on: ["code_review_design"]
+    inputs:
+      - feature_description
+      - component_code
+      - technical_requirements
+    outputs:
+      - test_strategy
+      - test_cases
+      - automation_scripts
+
+  # Phase 5: Documentation & Tracking
+  - name: "documentation"
+    agent: "docs-manager"
+    type: "parallel"
+    depends_on: ["test_planning"]
+    inputs:
+      - feature_description
+      - technical_requirements
+      - implementation_plan
+      - component_code
+    outputs:
+      - feature_documentation
+      - api_documentation
+      - user_guides
+
+  - name: "project_tracking"
+    agent: "project-tracker"
+    type: "sequential"
+    depends_on: ["test_planning"]
+    inputs:
+      - timeline_estimate
+      - implementation_plan
+      - priority
+    outputs:
+      - project_milestones
+      - progress_tracking
+      - resource_allocation
+
+# Success Criteria
+success_criteria:
+  - all_steps_completed: true
+  - code_review_passed: true
+  - tests_coverage: ">80%"
+  - documentation_complete: true
+  - timeline_adherence: ">90%"
+
+# Failure Handling
+failure_handling:
+  - step_failure:
+      action: "retry"
+      max_attempts: 3
+      backoff: "exponential"
+
+  - critical_failure:
+      action: "escalate"
+      notify: ["project-manager", "tech-lead"]
+
+  - timeout:
+      action: "partial_completion"
+      save_progress: true
+
+# Output Artifacts
+outputs:
+  - name: "feature_package"
+    type: "zip"
+    contains:
+      - implementation_plan
+      - ui_mockups
+      - component_code
+      - database_schema
+      - test_cases
+      - documentation
+
+  - name: "progress_report"
+    type: "json"
+    contains:
+      - timeline_actual
+      - milestones_completed
+      - quality_metrics
+      - resource_utilization
+
+# Integration Points
+integrations:
+  git:
+    create_branch: true
+    branch_name: "feature/{feature_name}"
+    commit_strategy: "per_step"
+
+  jira:
+    create_epic: true
+    create_subtasks: true
+    update_status: true
+
+  slack:
+    notify_start: true
+    notify_completion: true
+    notify_failures: true
+    channel: "#mobile-dev"
+
+# Quality Gates
+quality_gates:
+  - step: "code_review_design"
+    criteria:
+      - security_score: ">90"
+      - performance_score: ">85"
+      - maintainability: ">80"
+
+  - step: "test_planning"
+    criteria:
+      - coverage_target: ">80%"
+      - test_completeness: ">95%"
+      - automation_ratio: ">70%"
+
+# Monitoring & Analytics
+monitoring:
+  track_execution_time: true
+  track_resource_usage: true
+  track_quality_metrics: true
+  generate_reports: true
+
+analytics:
+  success_rate_tracking: true
+  performance_benchmarking: true
+  bottleneck_identification: true
+  improvement_suggestions: true

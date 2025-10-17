@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileKit - AI Agent Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">📱 MobileKit</h1>
+                <p class="tagline">AI Agent Toolkit</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link active" data-section="dashboard">🏠 Dashboard</a></li>
+                <li><a href="#agents" class="nav-link" data-section="agents">🤖 Agents</a></li>
+                <li><a href="#workflows" class="nav-link" data-section="workflows">🔄 Workflows</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">📂 Projects</a></li>
+                <li><a href="#commands" class="nav-link" data-section="commands">⚡ Commands</a></li>
+                <li><a href="#docs" class="nav-link" data-section="docs">📚 Docs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                    <p>Overview of your mobile development agents and recent activity</p>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🤖</div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Active Agents</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Workflows</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📱</div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Tasks Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">🎨</div>
+                                <div class="activity-details">
+                                    <p><strong>UI/UX Designer</strong> generated new mockups for login screen</p>
+                                    <span class="activity-time">2 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🧪</div>
+                                <div class="activity-details">
+                                    <p><strong>Mobile Tester</strong> completed widget testing for payment flow</p>
+                                    <span class="activity-time">15 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🐛</div>
+                                <div class="activity-details">
+                                    <p><strong>Mobile Debugger</strong> fixed crash on Android 11</p>
+                                    <span class="activity-time">1 hour ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-grid">
+                            <button class="action-btn" data-action="new-project">
+                                <span class="action-icon">➕</span>
+                                <span class="action-label">New Project</span>
+                            </button>
+                            <button class="action-btn" data-action="run-tests">
+                                <span class="action-icon">🧪</span>
+                                <span class="action-label">Run Tests</span>
+                            </button>
+                            <button class="action-btn" data-action="review-code">
+                                <span class="action-icon">👁️</span>
+                                <span class="action-label">Review Code</span>
+                            </button>
+                            <button class="action-btn" data-action="debug-crash">
+                                <span class="action-icon">🐛</span>
+                                <span class="action-label">Debug Issues</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agents Section -->
+            <section id="agents" class="section">
+                <div class="section-header">
+                    <h2>AI Agents</h2>
+                    <p>Manage your mobile development AI agents</p>
+                </div>
+                
+                <div class="search-filter">
+                    <input type="text" placeholder="Search agents..." class="search-input" id="agent-search">
+                    <select class="filter-select" id="agent-filter">
+                        <option value="all">All Specialties</option>
+                        <option value="Architecture & Planning">Architecture &amp; Planning</option>
+                        <option value="Research & Analysis">Research &amp; Analysis</option>
+                        <option value="Design & Assets">Design &amp; Assets</option>
+                        <option value="Data Management">Data Management</option>
+                        <option value="Quality Assurance">Quality Assurance</option>
+                        <option value="Code Quality">Code Quality</option>
+                        <option value="Debugging & Fixes">Debugging &amp; Fixes</option>
+                        <option value="Documentation">Documentation</option>
+                        <option value="Version Control">Version Control</option>
+                        <option value="Deployment">Deployment</option>
+                        <option value="Content & Marketing">Content &amp; Marketing</option>
+                        <option value="Project Management">Project Management</option>
+                    </select>
+                </div>
+                
+                <div class="agents-grid" id="agents-grid">
+                    <!-- Agent cards will be generated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Workflows Section -->
+            <section id="workflows" class="section">
+                <div class="section-header">
+                    <h2>Workflow Builder</h2>
+                    <p>Create and manage workflows between agents</p>
+                </div>
+                
+                <div class="workflow-controls">
+                    <button class="btn btn-primary" id="create-workflow">Create New Workflow</button>
+                    <button class="btn btn-secondary" id="import-workflow">Import Workflow</button>
+                </div>
+                
+                <div class="workflows-list" id="workflows-list">
+                    <!-- Workflow cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="workflow-builder" id="workflow-builder" style="display: none;">
+                    <div class="builder-header">
+                        <h3>Workflow Builder</h3>
+                        <button class="btn btn-sm" id="close-builder">Close</button>
+                    </div>
+                    <div class="builder-canvas">
+                        <div class="agents-palette">
+                            <h4>Available Agents</h4>
+                            <div class="palette-agents" id="palette-agents">
+                                <!-- Draggable agents will be added here -->
+                            </div>
+                        </div>
+                        <div class="workflow-canvas" id="workflow-canvas">
+                            <p class="canvas-hint">Drag agents here to build your workflow</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="section-header">
+                    <h2>Project Setup</h2>
+                    <p>Initialize new mobile projects with context files</p>
+                </div>
+                
+                <div class="project-wizard">
+                    <div class="wizard-step active" data-step="1">
+                        <h3>Choose Project Type</h3>
+                        <div class="project-types" id="project-types">
+                            <!-- Project type cards will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="wizard-step" data-step="2">
+                        <h3>Project Configuration</h3>
+                        <form class="project-form" id="project-form">
+                            <div class="form-group">
+                                <label class="form-label">Project Name</label>
+                                <input type="text" class="form-control" id="project-name" placeholder="My Awesome App">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Package/Bundle ID</label>
+                                <input type="text" class="form-control" id="package-id" placeholder="com.company.app">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" id="project-description" rows="3" placeholder="Brief description of your app"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Target Platforms</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" checked> iOS</label>
+                                    <label><input type="checkbox" checked> Android</label>
+                                    <label><input type="checkbox"> Web</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="wizard-controls">
+                        <button class="btn btn-secondary" id="wizard-prev" style="display: none;">Previous</button>
+                        <button class="btn btn-primary" id="wizard-next">Next</button>
+                        <button class="btn btn-success" id="create-project" style="display: none;">Create Project</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Commands Section -->
+            <section id="commands" class="section">
+                <div class="section-header">
+                    <h2>Command Center</h2>
+                    <p>CLI-like interface to run agent commands</p>
+                </div>
+                
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <span class="terminal-title">MobileKit Terminal</span>
+                        <div class="terminal-controls">
+                            <button class="terminal-btn" id="clear-terminal">Clear</button>
+                            <button class="terminal-btn" id="terminal-help">Help</button>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-output" id="terminal-output">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">mobilekit@dev:~$</span>
+                                <span class="terminal-text">Welcome to MobileKit Terminal!</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">mobilekit@dev:~$</span>
+                                <span class="terminal-text">Type 'help' for available commands</span>
+                            </div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">mobilekit@dev:~$</span>
+                            <input type="text" class="terminal-input" id="terminal-input" placeholder="Enter command...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="commands-reference">
+                    <h3>Available Commands</h3>
+                    <div class="commands-list" id="commands-list">
+                        <!-- Commands will be generated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documentation Section -->
+            <section id="docs" class="section">
+                <div class="section-header">
+                    <h2>Documentation Hub</h2>
+                    <p>Built-in documentation and templates</p>
+                </div>
+                
+                <div class="docs-navigation">
+                    <div class="docs-sidebar">
+                        <ul class="docs-menu">
+                            <li><a href="#getting-started" class="docs-link active">Getting Started</a></li>
+                            <li><a href="#agent-guide" class="docs-link">Agent Guide</a></li>
+                            <li><a href="#workflow-patterns" class="docs-link">Workflow Patterns</a></li>
+                            <li><a href="#flutter-templates" class="docs-link">Flutter Templates</a></li>
+                            <li><a href="#ios-templates" class="docs-link">iOS Templates</a></li>
+                            <li><a href="#best-practices" class="docs-link">Best Practices</a></li>
+                            <li><a href="#troubleshooting" class="docs-link">Troubleshooting</a></li>
+                        </ul>
+                    </div>
+                    <div class="docs-content">
+                        <div class="docs-section active" id="getting-started">
+                            <h3>Getting Started with MobileKit</h3>
+                            <p>MobileKit is an AI-powered toolkit for mobile development that uses specialized agents to automate and enhance your development workflow.</p>
+                            
+                            <h4>Quick Start</h4>
+                            <ol>
+                                <li>Create a new project using the Project Setup wizard</li>
+                                <li>Configure your agents in the Agents section</li>
+                                <li>Build workflows to automate your development process</li>
+                                <li>Use the Command Center for quick actions</li>
+                            </ol>
+                            
+                            <div class="code-example">
+                                <h4>Example: Creating a New Flutter Project</h4>
+                                <pre><code>mk new-project --type flutter --name "MyApp" --package "com.example.myapp"</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="docs-section" id="agent-guide">
+                            <h3>Agent Guide</h3>
+                            <p>Learn how to effectively use and configure each AI agent in your mobile development workflow.</p>
+                            
+                            <h4>Core Agents</h4>
+                            <ul>
+                                <li><strong>Mobile Planner</strong>: Plans app architecture and technical requirements</li>
+                                <li><strong>UI/UX Designer</strong>: Generates mockups and converts to code</li>
+                                <li><strong>Mobile Tester</strong>: Creates comprehensive test suites</li>
+                                <li><strong>Code Reviewer</strong>: Ensures code quality and best practices</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="docs-section" id="workflow-patterns">
+                            <h3>Workflow Patterns</h3>
+                            <p>Common workflow patterns for different development scenarios.</p>
+                        </div>
+                        
+                        <div class="docs-section" id="flutter-templates">
+                            <h3>Flutter Templates</h3>
+                            <p>Pre-built Flutter templates and code snippets.</p>
+                        </div>
+                        
+                        <div class="docs-section" id="ios-templates">
+                            <h3>iOS Templates</h3>
+                            <p>Native iOS templates and SwiftUI examples.</p>
+                        </div>
+                        
+                        <div class="docs-section" id="best-practices">
+                            <h3>Best Practices</h3>
+                            <p>Mobile development best practices and guidelines.</p>
+                        </div>
+                        
+                        <div class="docs-section" id="troubleshooting">
+                            <h3>Troubleshooting</h3>
+                            <p>Common issues and their solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

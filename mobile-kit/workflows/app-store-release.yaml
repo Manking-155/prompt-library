@@ -1,0 +1,82 @@
+name: "App Store Release Workflow"
+description: "Complete app store submission and release process"
+version: "1.0"
+
+agents:
+  - name: "mobile-tester"
+    role: "Final testing and quality assurance"
+    input:
+      - release_candidate
+      - feature_list
+    output:
+      - test_results
+      - quality_report
+      - device_compatibility_report
+
+  - name: "code-reviewer"
+    role: "Final code review"
+    input:
+      - release_candidate
+      - test_results
+    output:
+      - security_audit
+      - performance_review
+      - compliance_check
+
+  - name: "content-writer"
+    role: "Create app store content"
+    input:
+      - feature_list
+      - release_notes
+      - target_audience
+    output:
+      - app_store_description
+      - marketing_copy
+      - screenshots_descriptions
+
+  - name: "release-manager"
+    role: "Manage app store submission"
+    input:
+      - build_artifacts
+      - app_store_description
+      - compliance_documents
+    output:
+      - app_store_submission
+      - review_status
+      - release_schedule
+
+  - name: "git-manager"
+    role: "Tag and manage release version"
+    input:
+      - release_candidate
+      - release_approval
+    output:
+      - version_tags
+      - release_branches
+      - changelog
+
+  - name: "project-tracker"
+    role: "Track release metrics"
+    input:
+      - release_data
+      - user_feedback
+      - performance_metrics
+    output:
+      - release_report
+      - success_metrics
+      - improvement_recommendations
+
+execution_order:
+  - mobile-tester
+  - code-reviewer
+  - content-writer
+  - release-manager
+  - git-manager
+  - project-tracker
+
+dependencies: {}
+context:
+  project_type: "mobile"
+  release_type: "major_release"
+  app_store_submission: true
+  marketing_required: true

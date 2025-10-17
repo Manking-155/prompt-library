@@ -1,0 +1,67 @@
+name: "Bug Fix Release Workflow"
+description: "Process for fixing bugs and releasing patches"
+version: "1.0"
+
+agents:
+  - name: "mobile-debugger"
+    role: "Analyze crash reports and identify root cause"
+    input:
+      - crash_reports
+      - bug_reports
+      - performance_logs
+    output:
+      - root_cause_analysis
+      - fix_recommendations
+
+  - name: "mobile-tester"
+    role: "Create regression tests for the fix"
+    input:
+      - fix_recommendations
+      - affected_code_areas
+    output:
+      - test_cases
+      - regression_tests
+
+  - name: "code-reviewer"
+    role: "Review the implemented fix"
+    input:
+      - implemented_fix
+      - test_cases
+    output:
+      - review_comments
+      - security_analysis
+      - performance_recommendations
+
+  - name: "git-manager"
+    role: "Manage version control for the release"
+    input:
+      - reviewed_fix
+      - review_comments
+    output:
+      - release_branch
+      - version_tags
+      - merge_request
+
+  - name: "release-manager"
+    role: "Handle app store deployment"
+    input:
+      - release_branch
+      - build_artifacts
+      - release_notes
+    output:
+      - app_store_submission
+      - deployment_status
+
+execution_order:
+  - mobile-debugger
+  - mobile-tester
+  - code-reviewer
+  - git-manager
+  - release-manager
+
+dependencies: {}
+context:
+  project_type: "mobile"
+  release_type: "bug_fix"
+  testing_required: true
+  code_review_required: true

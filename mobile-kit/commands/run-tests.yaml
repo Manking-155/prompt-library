@@ -1,0 +1,10 @@
+name: run-tests
+description: Define and validate tests for a change
+inputs:
+  scope: string
+steps:
+  - role: mobile-tester
+    with: agents/mobile-tester.md
+    prompt: |
+      Given scope=${scope}, propose and write tests (unit/widget/integration) as applicable.
+      Output: tests.md and risk notes.

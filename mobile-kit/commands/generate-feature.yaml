@@ -1,0 +1,39 @@
+name: generate-feature
+description: Plan → design → implement a new feature using Claude Code agents
+inputs:
+  feature_name: string
+  platform: [flutter, ios-swift, react-native]
+  brief: string
+steps:
+  - role: mobile-planner
+    with: agents/mobile-planner.md
+    prompt: |
+      Create a concise implementation plan for "${feature_name}".
+      Consider platform=${platform}. Use CLAUDE.md guardrails.
+      Output: plan.md (milestones, components, risks, test scope).
+  - role: mobile-researcher
+    with: agents/mobile-researcher.md
+    prompt: |
+      Validate plan.md and propose libraries, APIs, and patterns.
+      Output: research.md (pros/cons, choices, references).
+  - role: ui-ux-designer
+    with: agents/ui-ux-designer.md
+    prompt: |
+      Produce UI spec and component tree for the feature.
+      Use templates/${platform}/MOBILE_CONTEXT.md.
+      Output: ui-spec.md + assets list (if any).
+  - role: mobile-developer
+    with: agents/mobile-ui-ux-designer-agent.md
+    prompt: |
+      Implement the feature per ui-spec.md.
+      Output: code-diff.patch with minimal comments.
+  - role: mobile-tester
+    with: agents/mobile-tester.md
+    prompt: |
+      Create tests for the new feature. Target ≥80% where practical.
+      Output: tests.md and any test diffs.
+  - role: code-reviewer
+    with: agents/code-reviewer.md
+    prompt: |
+      Review code-diff.patch and tests.md using CLAUDE.md.
+      Output: review.md with approve/changes-requested.

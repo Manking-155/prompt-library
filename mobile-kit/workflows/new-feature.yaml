@@ -1,0 +1,103 @@
+name: "new-feature-development"
+description: "Complete workflow for developing a new mobile feature from planning to deployment"
+version: "1.0"
+
+config:
+  timeout: 3600
+  retry_attempts: 3
+  parallel_limit: 3
+  context_sharing: true
+
+inputs:
+  - name: "feature_description"
+    type: "string"
+    required: true
+    description: "Detailed description of the feature to be developed"
+
+  - name: "target_platforms"
+    type: "array"
+    required: true
+    options: ["ios", "android", "both"]
+    description: "Target platforms for the feature"
+
+steps:
+  - name: "planning"
+    agent: "mobile-planner"
+    type: "sequential"
+    inputs:
+      - feature_description
+      - target_platforms
+    outputs:
+      - technical_requirements
+      - implementation_plan
+      - timeline_estimate
+
+  - name: "research"
+    agent: "mobile-researcher"
+    type: "parallel"
+    depends_on: ["planning"]
+    parallel_instances: 2
+    inputs:
+      - technical_requirements
+      - target_platforms
+    outputs:
+      - package_recommendations
+      - implementation_approaches
+      - best_practices
+
+  - name: "ui_design"
+    agent: "ui-ux-designer"
+    type: "sequential"
+    depends_on: ["planning", "research"]
+    inputs:
+      - feature_description
+      - target_platforms
+      - technical_requirements
+    outputs:
+      - ui_mockups
+      - design_assets
+      - component_code
+
+  - name: "database_design"
+    agent: "database-architect"
+    type: "parallel"
+    depends_on: ["planning"]
+    inputs:
+      - technical_requirements
+      - implementation_plan
+    outputs:
+      - database_schema
+      - migration_scripts
+      - data_models
+
+  - name: "test_planning"
+    agent: "mobile-tester"
+    type: "sequential"
+    depends_on: ["ui_design", "database_design"]
+    inputs:
+      - feature_description
+      - component_code
+      - technical_requirements
+    outputs:
+      - test_strategy
+      - test_cases
+      - automation_scripts
+
+  - name: "code_review"
+    agent: "code-reviewer"
+    type: "sequential"
+    depends_on: ["test_planning"]
+    inputs:
+      - component_code
+      - database_schema
+      - test_cases
+    outputs:
+      - review_feedback
+      - security_recommendations
+      - performance_suggestions
+
+success_criteria:
+  - all_steps_completed: true
+  - code_review_passed: true
+  - tests_coverage: ">80%"
+  - documentation_complete: true

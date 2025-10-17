@@ -1,0 +1,16 @@
+name: new-project
+description: Initialize a new mobile project plan and baseline
+inputs:
+  name: string
+  platform: [flutter, ios-swift, react-native]
+steps:
+  - role: mobile-planner
+    with: agents/mobile-planner.md
+    prompt: |
+      Produce initial architecture and folder structure for ${name} on ${platform}.
+      Output: architecture.md and checklist.md.
+  - role: mobile-researcher
+    with: agents/mobile-researcher.md
+    prompt: |
+      Recommend core libraries, testing stack, and CI outlines.
+      Output: tech-choices.md.

@@ -1,0 +1,67 @@
+# MobileKit CLI Configuration
+
+# AI Provider Configuration
+ai_provider: "openai"  # openai, claude, local
+model: "gpt-4"
+api_key: "${OPENAI_API_KEY}"
+max_tokens: 4000
+temperature: 0.7
+
+# Default Project Settings
+default_project_type: "flutter"
+default_platforms: ["ios", "android"]
+min_sdk_versions:
+  ios: "15.0"
+  android: "21"
+
+# Testing Configuration
+testing:
+  framework: "flutter_test"
+  coverage_threshold: 80
+  devices:
+    ios: ["iPhone 14", "iPad Air"]
+    android: ["Pixel 7", "Samsung Galaxy S23"]
+
+# Build Configuration
+build:
+  auto_increment_version: true
+  generate_release_notes: true
+  submit_for_review: false
+
+# Workflow Configuration
+workflows:
+  enabled: true
+  parallel_execution: true
+  timeout_minutes: 30
+
+# Agent Configuration
+agents:
+  timeout_seconds: 300
+  max_retries: 3
+  log_level: "INFO"
+
+# Template Configuration
+templates:
+  directory: "templates"
+  custom_templates: []
+
+# Output Configuration
+output:
+  verbose: false
+  color: true
+  progress_bars: true
+  log_file: "mobilekit.log"
+
+# Platform-Specific Settings
+flutter:
+  sdk_channel: "stable"
+  analytics: false
+
+ios:
+  code_signing: automatic
+  provisioning_profile: auto
+
+android:
+  min_sdk: 21
+  target_sdk: 33
+  compile_sdk: 33

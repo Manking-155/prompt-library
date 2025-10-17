@@ -1,0 +1,48 @@
+// iOS Swift Project Template for MobileKit
+// This is a simplified template structure
+
+// MARK: - Project Configuration
+let project = Project(
+    name: "MobileKitApp",
+    organizationIdentifier: "com.mobilekit.app",
+    targets: [
+        .target(
+            name: "MobileKitApp",
+            destinations: [.iPhone, .iPad],
+            product: .app,
+            bundleId: "com.mobilekit.app",
+            deploymentTargets: .iOS("15.0"),
+            infoPlist: .extendingDefault(
+                with: [
+                    "CFBundleDisplayName": "MobileKit App",
+                    "UILaunchStoryboardName": "LaunchScreen",
+                    "UISupportedInterfaceOrientations": [
+                        "UIInterfaceOrientationPortrait",
+                        "UIInterfaceOrientationLandscapeLeft",
+                        "UIInterfaceOrientationLandscapeRight"
+                    ],
+                    "NSAppTransportSecurity": [
+                        "NSAllowsArbitraryLoads": true
+                    ]
+                ]
+            ),
+            sources: ["Sources/**"],
+            resources: ["Resources/**"],
+            dependencies: [
+                .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.8.0"),
+                .package(url: "https://github.com/realm/realm-swift.git", from: "10.42.0")
+            ]
+        ),
+        .target(
+            name: "MobileKitAppTests",
+            destinations: [.iPhone, .iPad],
+            product: .unitTests,
+            bundleId: "com.mobilekit.app.tests",
+            infoPlist: .default,
+            sources: ["Tests/**"],
+            dependencies: [
+                .target(name: "MobileKitApp")
+            ]
+        )
+    ]
+)
