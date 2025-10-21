@@ -1,0 +1,13 @@
+Category,Best Practice,Source,Priority
+Architecture,Use feature-based modular architecture,"web:75, web:81",High
+Architecture,Separate concerns into 3 layers,"web:52, web:54",High
+State Management,Use .obs only for UI-reactive state,web:107,High
+State Management,Use workers for side effects,web:107,Medium
+Dependency Injection,Use Get.lazyPut() for lazy loading,"web:92, web:96",High
+Dependency Injection,Avoid controller-to-controller injection,web:89,Medium
+Testing,Enable Get.testMode = true,web:94,High
+Testing,Use Mockito for mocking controllers,web:97,High
+Performance,Dispose controllers in onClose(),web:98,High
+Performance,Use selective rebuilding with GetBuilder,web:107,Medium
+Database - Drift,Use guided migrations,web:76,High
+Database - Drift,Test migrations thoroughly,web:76,High
