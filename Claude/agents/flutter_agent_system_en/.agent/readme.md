@@ -15,6 +15,10 @@ Start here to understand the system architecture:
 Learn about data persistence and schema management:
 - **[Database Schema & Drift Integration](system/database_schema.md)** - SQLite with Drift ORM, queries, migrations
 
+### 📋 Tasks & Planning
+PRDs and implementation plans:
+- **[Tasks](tasks/)** - PRD & implementation plans for each feature
+
 ### 📚 Templates & Examples
 Copy-paste templates and detailed examples:
 - **[Feature Module Template](templates/feature_module_template.md)** - Complete step-by-step guide to create new features
@@ -38,9 +42,10 @@ How to perform common development tasks:
 4. Review **[Feature Module Template](templates/feature_module_template.md)** as reference
 
 ### For Adding a Feature
-1. Check **[Adding a New Feature](sops/adding_new_feature.md)**
-2. Use **[Feature Module Template](templates/feature_module_template.md)** for implementation
-3. Reference **[State Management Examples](templates/state_management_example.md)** for GetX patterns
+1. Check **[Tasks](tasks/)** for existing PRDs and plans
+2. Check **[Adding a New Feature](sops/adding_new_feature.md)**
+3. Use **[Feature Module Template](templates/feature_module_template.md)** for implementation
+4. Reference **[State Management Examples](templates/state_management_example.md)** for GetX patterns
 
 ### For Database Changes
 1. Read **[Database Schema](system/database_schema.md)**
@@ -52,6 +57,30 @@ How to perform common development tasks:
 3. Review **[Dependency Injection](sops/dependency_injection.md)** if DI issues occur
 
 ## 📋 Project Structure
+
+```
+flutter_agent_system_en/.agent/
+├── tasks/                      # PRD & implementation plans for each feature
+├── system/                     # System documentation and architecture
+│   ├── clean_architecture_guide.md
+│   ├── code_standards.md
+│   ├── database_schema.md
+│   ├── modular_architecture_guide.md
+│   └── project_architecture.md
+├── templates/                  # Reusable templates
+│   ├── clean_architecture_layers.md
+│   ├── feature_module_template.md
+│   └── state_management_example.md
+├── sops/                       # Standard Operating Procedures
+│   ├── adding_new_feature.md
+│   ├── database_migrations.md
+│   ├── dependency_injection.md
+│   ├── error_handling.md
+│   └── routing_navigation.md
+└── readme.md                   # This file
+```
+
+## 📱 Flutter App Structure
 
 ```
 flutter_app/
