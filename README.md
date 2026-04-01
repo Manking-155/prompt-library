@@ -2,6 +2,8 @@
 
 Chào mừng bạn đến với Thư Viện Prompt chuẩn hóa. 
 
+**AI / agent map:** see [`.docs/SITE.md`](.docs/SITE.md) for responsibilities, key paths, and link to Moboco portfolio doc canon (`ios-knowledge`).
+
 ## 🗺 Cấu trúc Repository
 
 Mọi Prompt trong kho lưu trữ này đều được quản lý với tư tưởng **Prompt As Code**, có Versioning và YAML Metadata rõ ràng.
