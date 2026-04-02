@@ -1,7 +1,7 @@
 # Tooling map — `master_prompt`
 
 **Owner:** Quoc Nguyen Van  
-**Last verified:** 2026-04-02 · `HEAD` in this repo (refresh with `git rev-parse HEAD`)
+**Last verified:** 2026-04-02 · refresh with `git rev-parse HEAD`
 
 ## Responsibility
 
@@ -19,8 +19,9 @@
 | `prompts/skills/` | Task-sized prompt fragments |
 | `prompts/workflows/` | Chained automation |
 | `prompts/experiments/` | A/B / sandbox |
-| `docs/` | Human guidelines & meta |
+| `docs/` | Human guidelines & meta (no single index file required — browse as needed) |
 | `.templates/PROMPT_TEMPLATE.md` | New prompt scaffold |
+| `inboxes/` | Archives / exports — **do not treat as source of truth** for prompt versions |
 
 ## Link canon
 
@@ -29,5 +30,11 @@ Moboco portfolio doc standard (tiers, drift, L0-T): sibling or clone **`ios-know
 ## Reading order
 
 1. This `SITE.md`  
-2. Root `README.md` (repo layout summary)  
+2. Root [`README.md`](../README.md) (repo layout summary)  
 3. `docs/` for deep guidelines  
+
+## Known drift
+
+| Area | Note |
+|------|------|
+| `docs/` | Folder may grow ad hoc; no mandated `docs/README.md` — add one if navigation becomes painful. |
