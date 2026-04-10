@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the `master_prompt` library will be documented in this file.
+All notable changes to the `prompt-library` library will be documented in this file.
 
 ## [2026-04-10] - Prompt Library V2 Migration & Standardization
 

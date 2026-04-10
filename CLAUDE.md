@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Guidance for Claude Code in **master_prompt**.
+Guidance for Claude Code in **prompt-library**.
 
 ## Before structural or documentation work
 
@@ -9,7 +9,7 @@ Guidance for Claude Code in **master_prompt**.
 
 ## Moboco portfolio standard
 
-Tier **L0-T** and drift rules: **`ios-knowledge`** repository → `docs/moboco-portfolio-dot-docs-standard.md` (use your clone / sibling path).
+Tier **L0-T** and drift rules: **`ios-hub`** repository → `docs/moboco-portfolio-dot-docs-standard.md` (use your clone / sibling path).
 
 ## Secrets
 

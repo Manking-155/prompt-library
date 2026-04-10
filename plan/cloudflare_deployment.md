@@ -1,6 +1,6 @@
 # Kế Hoạch Triển Khai Master Prompt Lên Cloudflare
 
-Tài liệu này vạch ra chiến lược để đưa bộ nhớ MCP (Semantic Search) của `master_prompt` lên hệ sinh thái Cloudflare, phục vụ cho việc truy cập từ xa 24/7.
+Tài liệu này vạch ra chiến lược để đưa bộ nhớ MCP (Semantic Search) của `prompt-library` lên hệ sinh thái Cloudflare, phục vụ cho việc truy cập từ xa 24/7.
 
 Do môi trường điện toán mây của Cloudflare khác biệt so với local (không chạy trực tiếp được Python/ChromaDB), tài liệu này phác thảo 2 hướng đi tối ưu nhất:
 

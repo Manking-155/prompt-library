@@ -1,6 +1,6 @@
-# AGENTS.md — master_prompt
+# AGENTS.md — prompt-library
 
-> **Project:** master_prompt — Version-controlled AI prompt library for Claude Code, Cursor, Gemini CLI.
+> **Project:** prompt-library — Version-controlled AI prompt library for Claude Code, Cursor, Gemini CLI.
 > **Type:** Prompt Engineering & Documentation
 > **Owner:** Quoc Nguyen Van
 
@@ -63,7 +63,7 @@ changelog:
 ## CASS Memory Rituals
 
 ```bash
-cm context "master_prompt <topic>" --json   # Before work
+cm context "prompt-library <topic>" --json   # Before work
 cm reflect                                   # After work
 ```
 
@@ -92,7 +92,7 @@ cm reflect                                   # After work
 Daily logs khi làm việc trên repo này được lưu tại:
 
 ```
-../ios-memory/platform/master_prompt/memory/4-operational/daily/
+../ios-memory/platform/prompt-library/memory/4-operational/daily/
 ```
 
 - **Đầu session:** Đọc daily gần nhất + `../ios-memory/portfolio/decisions/DECISIONS.md`

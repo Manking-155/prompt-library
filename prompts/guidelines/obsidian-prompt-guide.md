@@ -1,4 +1,4 @@
-# 🪵 Obsidian Prompt Guide — master_prompt Library
+# 🪵 Obsidian Prompt Guide — prompt-library Library
 
 > **Context:** Hệ thống này được tối ưu hóa cho người dùng **Obsidian** để quản lý tri thức (PKM) và vận hành multi-agent workflow.
 
@@ -7,10 +7,10 @@
 ## 1. Setup Obsidian Library
 
 ### Cấu trúc Vault Khuyến nghị
-Bạn nên mount folder `master_prompt/prompts` trực tiếp vào Vault hoặc sử dụng symlink:
+Bạn nên mount folder `prompt-library/prompts` trực tiếp vào Vault hoặc sử dụng symlink:
 
 ```bash
-ln -s /path/to/master_prompt/prompts ~/ObsidianVault/Prompts
+ln -s /path/to/prompt-library/prompts ~/ObsidianVault/Prompts
 ```
 
 ### Obsidian Plugins Hữu ích
@@ -76,4 +76,4 @@ SORT name ASC
 
 ## 5. Lưu ý quan trọng
 - **Không chỉnh sửa nội dung gốc**: Nếu muốn customize, hãy copy sang note mới hoặc sử dụng Obsidian Properties để ghi đè.
-- **Version Control**: Thư viện này được quản lý bằng Git (master_prompt), hãy `git pull` thường xuyên để cập nhật các frameworks mới.
+- **Version Control**: Thư viện này được quản lý bằng Git (prompt-library), hãy `git pull` thường xuyên để cập nhật các frameworks mới.

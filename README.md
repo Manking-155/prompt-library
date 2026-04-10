@@ -2,7 +2,7 @@
 
 Chào mừng bạn đến với Thư Viện Prompt chuẩn hóa (Version 2.0). 
 
-**AI / agent map:** see [`.docs/SITE.md`](.docs/SITE.md) for responsibilities, key paths, and link to Moboco portfolio doc canon (`ios-knowledge`).
+**AI / agent map:** see [`.docs/SITE.md`](.docs/SITE.md) for responsibilities, key paths, and link to Moboco portfolio doc canon (`ios-hub`).
 
 ## 🗺 Cấu trúc Repository
 

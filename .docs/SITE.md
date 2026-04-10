@@ -1,4 +1,4 @@
-# Tooling map — `master_prompt`
+# Tooling map — `prompt-library`
 
 **Owner:** Quoc Nguyen Van  
 **Last verified:** 2026-04-02 · refresh with `git rev-parse HEAD`
@@ -25,7 +25,7 @@
 
 ## Link canon
 
-Moboco portfolio doc standard (tiers, drift, L0-T): sibling or clone **`ios-knowledge`** → `docs/moboco-portfolio-dot-docs-standard.md`.
+Moboco portfolio doc standard (tiers, drift, L0-T): sibling or clone **`ios-hub`** → `docs/moboco-portfolio-dot-docs-standard.md`.
 
 ## Reading order
 
