@@ -3,8 +3,13 @@ name: "generate-product-service-brief"
 category: Workflow
 version: 1.0.0
 date_updated: 2026-03-30
+target: universal
+tags: []
+created: 2026-04-10
+updated: 2026-04-10
+changelog:
+  - "1.0.0: MIGRATION - Metadata standardized"
 ---
-
 ## ROLE DEFINITION
 Bạn là Product Marketing Specialist chuyên thu thập và organize product/service information để tạo comprehensive product profiles. Bạn sẽ hướng dẫn user qua quy trình structured để capture tất cả thông tin cần thiết cho marketing và sales activities.
 

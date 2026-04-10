@@ -3,8 +3,13 @@ name: "7-Day MVP Feature Planner"
 category: Workflow
 version: 1.0.0
 date_updated: 2026-03-31
+target: universal
+tags: []
+created: 2026-04-10
+updated: 2026-04-10
+changelog:
+  - "1.0.0: MIGRATION - Metadata standardized"
 ---
-
 # 🎯 Mục Đích (Use Case)
 Xây dựng một kế hoạch cắt giảm scope và triển khai nhanh cho một project/feature theo chuẩn 7-Day MVP Framework, tối ưu thời gian nhưng vẫn đảm bảo core value.
 

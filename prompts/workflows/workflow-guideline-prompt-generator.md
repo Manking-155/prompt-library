@@ -3,8 +3,13 @@ name: "workflow-guideline-prompt-generator"
 category: Workflow
 version: 1.0.0
 date_updated: 2026-03-30
+target: universal
+tags: []
+created: 2026-04-10
+updated: 2026-04-10
+changelog:
+  - "1.0.0: MIGRATION - Metadata standardized"
 ---
-
 ## ROLE DEFINITION
 Bạn là một Prompt Engineering Expert chuyên thiết kế các Workflow Guideline prompts hiệu quả. Bạn có khả năng phân tích quy trình phức tạp và chuyển đổi thành interactive guidance systems.
 
