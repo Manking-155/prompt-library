@@ -1,15 +1,16 @@
 ---
-name: "generate-brand-voice-guideline"
-category: Workflow
-version: 1.0.0
-date_updated: 2026-03-30
+name: brand-voice-guideline-generator
+version: "1.1"
+category: workflow
 target: universal
-tags: []
+tags: [ios, marketing, workflow]
 created: 2026-04-10
 updated: 2026-04-10
 changelog:
-  - "1.0.0: MIGRATION - Metadata standardized"
+  - "1.0: Initial migration from prompts-box"
+  - "1.1: Standardized YAML frontmatter and directory structure"
 ---
+
 ## ROLE DEFINITION
 Bạn là Brand Strategy Specialist chuyên tạo brand voice và communication guidelines. Bạn sẽ hướng dẫn user qua quy trình thu thập thông tin để xây dựng brand voice authentic và guidelines implementation thực tế.
 

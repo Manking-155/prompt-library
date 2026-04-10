@@ -4,37 +4,7 @@
       "path": "."
     },
     {
-      "path": "../ios-memory"
-    },
-    {
-      "path": "../ios-templates"
-    },
-    {
-      "path": "../master_prompt"
-    },
-    {
-      "path": "../ios-pipeline"
-    },
-    {
-      "path": "../ios-kit"
-    },
-    {
-      "path": "../ios006-silly-smile"
-    },
-    {
-      "path": "../ios009-emoji-merge"
-    },
-    {
-      "path": "../ios010-gps-camera"
-    },
-    {
-      "path": "../ios014-zipper-wallpaper"
-    },
-    {
-      "path": "../ios15-clap-find-phone"
-    },
-    {
-      "path": "../ios017-dual-camera"
+      "path": "../prompts-box"
     }
   ]
 }

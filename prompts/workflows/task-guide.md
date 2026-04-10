@@ -1,3 +1,16 @@
+---
+name: task-guide
+version: "1.1"
+category: workflow
+target: universal
+tags: [ios, marketing, workflow]
+created: 2026-04-10
+updated: 2026-04-10
+changelog:
+  - "1.0: Initial migration from prompts-box"
+  - "1.1: Standardized YAML frontmatter and directory structure"
+---
+
 # TASK MANAGEMENT MASTER PROMPT
 *Tạo Task Description với Interactive AI-Assisted Workflow*
 

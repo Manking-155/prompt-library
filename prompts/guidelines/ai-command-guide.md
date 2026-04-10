@@ -1,3 +1,16 @@
+---
+name: ai-command-guide
+version: "1.1"
+category: guideline
+target: universal
+tags: [ios, marketing, guideline]
+created: 2026-04-10
+updated: 2026-04-10
+changelog:
+  - "1.0: Initial migration from prompts-box"
+  - "1.1: Standardized YAML frontmatter and directory structure"
+---
+
 ### **Bản thiết kế để xây dựng AI Agent Tương tác**
 
 Đây là bản đúc kết các nguyên tắc và kỹ thuật mà chúng ta đã sử dụng để thiết kế "InsightAgent". Bạn có thể dùng nó như một cẩm nang để xây dựng các AI Agent phức tạp, có khả năng tương tác và thực thi nhiều tác vụ khác nhau.

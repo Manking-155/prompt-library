@@ -160,6 +160,15 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 
 ### Business & Operations
 
+#### Mentors & Strategy
+
+| Agent | Model | Description |
+|-------|-------|-------------|
+| [solopreneur-mentor](./roles/solopreneur-mentor.md) | sonnet | Frameworks: MECE, SWOT, RED, 5 Whys, Iceberg, SCAMPER |
+| [sme-owner-mentor](./roles/sme-owner-mentor.md) | sonnet | Focus scale doanh nghiệp + OKRs + Design Thinking |
+| [freelancer-mentor](./roles/freelancer-mentor.md) | sonnet | Value ladder, positioning, niche strategy |
+| [marketing-executive-mentor](./roles/marketing-executive-mentor.md) | opus | C-level marketing perspective |
+
 #### Business Analysis & Finance
 
 | Agent | Model | Description |
@@ -173,7 +182,13 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 | Agent | Model | Description |
 |-------|-------|-------------|
 | [content-marketer](./roles/content-marketer.md) | sonnet | Blog posts, social media, email campaigns |
+| [content-marketing-manager](./roles/content-marketing-manager.md) | sonnet | Strategic content, full customer journey, multi-channel |
+| [performance-marketing-specialist](./roles/performance-marketing-specialist.md) | sonnet | Performance ads, Meta/Google/TikTok/LinkedIn mastery |
+| [social-media-strategist](./roles/social-media-strategist.md) | sonnet | Platform mastery (FB, IG, TikTok), community & engagement |
 | [sales-automator](./tasks/sales-automator.md) | haiku | Cold emails, follow-ups, proposal generation |
+| [marketing-campaign-generator](./tasks/marketing-campaign-generator.md) | sonnet | 3-round campaign strategy from product brief |
+| [social-campaign-30day](./tasks/social-campaign-30day.md) | sonnet | 30-day social media plan, content calendar, KPIs |
+| [paid-ads-campaign](./tasks/paid-ads-campaign.md) | sonnet | Paid ads setup, optimization playbook & reporting |
 
 #### Support & Legal
 
@@ -187,6 +202,7 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 
 | Agent | Model | Description |
 |-------|-------|-------------|
+| [seo-specialist](./roles/seo-specialist.md) | opus | All-in-one SEO master: Technical, On-Page, Off-Page, Local |
 | [seo-content-auditor](./roles/seo-content-auditor.md) | sonnet | Content quality analysis, E-E-A-T signals assessment |
 | [seo-meta-optimizer](./meta/seo-meta-optimizer.md) | haiku | Meta title and description optimization |
 | [seo-keyword-strategist](./roles/seo-keyword-strategist.md) | haiku | Keyword analysis and semantic variations |
@@ -197,6 +213,15 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 | [seo-authority-builder](./tasks/seo-authority-builder.md) | sonnet | E-E-A-T signal analysis |
 | [seo-content-writer](./roles/seo-content-writer.md) | sonnet | SEO-optimized content creation |
 | [seo-content-planner](./workflows/seo-content-planner.md) | haiku | Content planning and topic clusters |
+
+### Design & Creative Assets
+
+| Agent | Model | Description |
+|-------|-------|-------------|
+| [visual-storyteller](./tasks/visual-storyteller.md) | sonnet | Brand narrative visualization and creative direction |
+| [image-architect](./tasks/image-architect.md) | sonnet | AI Image Prompt Engineering V5.0 - Style replication |
+| [notion-style-illustrator](./roles/notion-style-illustrator.md) | sonnet | Digital illustrator for minimalist black-and-white line art |
+| [context-wave-agency](./components/context-wave-agency.md) | haiku | Agency context loader for Creative Wave standards |
 
 ### Specialized Domains
 
