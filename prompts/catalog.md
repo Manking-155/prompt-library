@@ -118,7 +118,7 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 | Agent | Model | Description |
 |-------|-------|-------------|
 | [test-automator](./tasks/test-automator.md) | sonnet | Comprehensive test suite creation (unit, integration, e2e) |
-| [tdd-orchestrator](./workflows/tdd-orchestrator.md) | sonnet | Test-Driven Development methodology guidance |
+| [tdd-orchestrator](./workflows/engineering/tdd-orchestrator.md) | sonnet | Test-Driven Development methodology guidance |
 | [debugger](./tasks/debugger.md) | sonnet | Error resolution and test failure analysis |
 | [error-detective](./tasks/error-detective.md) | sonnet | Log analysis and error pattern recognition |
 
@@ -212,7 +212,7 @@ Complete reference for all **85 specialized AI agents** organized by category wi
 | [seo-cannibalization-detector](./tasks/seo-cannibalization-detector.md) | haiku | Keyword overlap detection |
 | [seo-authority-builder](./tasks/seo-authority-builder.md) | sonnet | E-E-A-T signal analysis |
 | [seo-content-writer](./roles/seo-content-writer.md) | sonnet | SEO-optimized content creation |
-| [seo-content-planner](./workflows/seo-content-planner.md) | haiku | Content planning and topic clusters |
+| [seo-content-planner](./workflows/management/seo-content-planner.md) | haiku | Content planning and topic clusters |
 
 ### Design & Creative Assets
 
