@@ -2,7 +2,7 @@
 
 Welcome to the **Master Prompt Library** — the centralized "Brain & Skill Routing Layer" of the **BKPlus Exocortex Agentic OS**. 
 
-This repository serves as a version-controlled prompt engineering and routing database. It ensures consistent, high-precision AI Agent behavior across our entire 13-repository workspace, acting as the primary skill provider for AI IDEs (Cline, Cursor) and terminal interfaces (Gemini CLI, Claude Code).
+This repository serves as a version-controlled prompt engineering and routing database. It ensures consistent, high-precision AI Agent behavior across our entire 13-repository workspace, acting as the primary skill provider for AI IDEs (Cursor, VSCode) and terminal interfaces (Gemini CLI, Claude Code).
 
 ## 🚀 Architecture Context
 
