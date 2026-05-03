@@ -63,14 +63,7 @@ jobs:
           fi
           # shellcheck source=/dev/null
           source "$RUNNER_ENV"
-          if ! verify_runner_env; then
-            echo "::error::AI CLI tools not available on this runner."
-            gh issue comment "$ISSUE_NUMBER" --repo "$REPO" \
-              --body "AI analysis unavailable: Runner offline or missing AI CLI tools (codex, claude, gemini).
-
-Ensure ai-mac-runner is online and has all required CLIs installed."
-            exit 1
-          fi
+          verify_runner_env
 
           # Rate limiting: max 1 analysis per hour per repo
           STATE_DIR="${HOME}/.cache/ios-pipeline/rate-limit"
@@ -96,12 +89,6 @@ Ensure ai-mac-runner is online and has all required CLIs installed."
             echo "Missing bundle under .github/scripts/workspace-issue-analysis (re-deploy from ios-pipeline)" >&2
             exit 1
           fi
-
-          # Update progress: Analysis started
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --remove-label "ai-analyze" 2>/dev/null || true
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --add-label "ai-analyzing"
 
           mkdir -p .ai-analysis
           gh issue view "$ISSUE_NUMBER" --repo "$REPO" --json title,body > .ai-analysis/issue.json
@@ -182,10 +169,6 @@ Ensure ai-mac-runner is online and has all required CLIs installed."
           test "$(wc -c < .ai-analysis/codex-prompt.md)" -lt 120000 || { echo "codex prompt too large"; exit 1; }
           codex -p "$(cat .ai-analysis/codex-prompt.md)" > .ai-analysis/codex-analysis.md
 
-          # Update progress: Codex complete
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --add-label "ai-codex-complete" 2>/dev/null || true
-
           cat > .ai-analysis/claude-prompt.md <<PROMPT
           Create a structured GitHub issue analysis report from this Codex analysis.
 
@@ -211,10 +194,6 @@ Ensure ai-mac-runner is online and has all required CLIs installed."
 
           test "$(wc -c < .ai-analysis/claude-prompt.md)" -lt 120000 || { echo "claude prompt too large"; exit 1; }
           claude -p "$(cat .ai-analysis/claude-prompt.md)" > .ai-analysis/report-draft.md
-
-          # Update progress: Claude synthesis complete
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --add-label "ai-claude-complete" 2>/dev/null || true
 
           cat > .ai-analysis/gemini-prompt.md <<PROMPT
           Review this report for quality and completeness.
@@ -251,9 +230,7 @@ Ensure ai-mac-runner is online and has all required CLIs installed."
         run: |
           set -euo pipefail
           gh issue comment "$ISSUE_NUMBER" --repo "$REPO" --body-file .ai-analysis/final-report.md
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --add-label "ai-analyzed" \
-            --remove-label "ai-analyzing,ai-codex-complete,ai-claude-complete" 2>/dev/null || true
+          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" --add-label "ai-analysis-ready"
 
       - name: Cleanup analysis artifacts
         if: always()
@@ -270,7 +247,5 @@ Ensure ai-mac-runner is online and has all required CLIs installed."
           REPO: ${{ github.repository }}
         run: |
           gh issue comment "$ISSUE_NUMBER" --repo "$REPO" \
-            --body "AI analysis failed. Check [workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
-          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" \
-            --add-label "ai-analysis-failed" \
-            --remove-label "ai-analyzing" 2>/dev/null || true
+            --body "AI analysis failed. Check workflow logs on the self-hosted runner."
+          gh issue edit "$ISSUE_NUMBER" --repo "$REPO" --add-label "ai-analysis-failed"
