@@ -66,7 +66,9 @@ jobs:
           if ! verify_runner_env; then
             echo "::error::AI CLI tools not available on this runner."
             gh issue comment "$ISSUE_NUMBER" --repo "$REPO" \
-              --body "AI analysis unavailable: Runner offline or missing AI CLI tools (codex, claude, gemini). Ensure ai-mac-runner is online and has all required CLIs installed."
+              --body "AI analysis unavailable: Runner offline or missing AI CLI tools (codex, claude, gemini).
+
+Ensure ai-mac-runner is online and has all required CLIs installed."
             exit 1
           fi
 
